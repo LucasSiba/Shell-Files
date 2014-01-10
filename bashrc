@@ -150,9 +150,9 @@ echo $PATH | fgrep -q :/sbin      || PATH=$PATH:/sbin
 echo $PATH | fgrep -q :/usr/sbin  || PATH=$PATH:/usr/sbin
 export PATH
 
-GREP=/bin/grep
+# SSH AGENT 
+GREP=`which grep`
 test=`/bin/ps -ef | $GREP ssh-agent | $GREP -v grep | /usr/bin/awk '{print $2}' | xargs`
-
 if [ "$test" = "" ]; then
    # there is no agent running
    if [ -e "$HOME/agent.sh" ]; then
@@ -162,6 +162,6 @@ if [ "$test" = "" ]; then
    # start a new agent
    /usr/bin/ssh-agent | $GREP -v echo >&$HOME/agent.sh
 fi;
-
 test -e $HOME/agent.sh && source $HOME/agent.sh
 alias kagent="kill -9 $SSH_AGENT_PID"
+
