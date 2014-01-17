@@ -6,3 +6,5 @@ cp ./vimrc ../.vimrc
 
 mkdir -v -p ../bin
 cp ./tab ../bin/tab
+
+echo "Success!"

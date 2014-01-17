@@ -13,8 +13,20 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
    platform='osx'
 fi
 
+hex2dec () {
+    echo $* | perl -lne 'foreach $num (split /\s/) { $hex_val = hex($num); print $hex_val; }'
+}
+
+dec2hex () {
+    echo $* | perl -lne 'foreach $num (split /\s/) { printf "%x\n", $num }'
+}
+
 unix2real () {
     perl -MPOSIX -le 'print "$_ => ".strftime("%F %T", gmtime $_) for @ARGV' $*
+}
+
+sxe_chomp () {
+    perl -nle '$l=$_; if ($l=~/^\d{8}\s\d{6}/) {$l=substr($l, 39);} print $l;'
 }
 
 hed() {
