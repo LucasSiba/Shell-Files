@@ -150,16 +150,7 @@ bind _ resize max
 # screen -t mail 1 elm
 # screen -t 40 2 rlogin faui40
 # while [ $x -lt 10 ]; do echo screen -t `perl -e "print chr $x+65"` $x;x=`expr $x + 1`; done
-screen -t "A " 0
-screen -t "B " 1
-screen -t "C " 2
-screen -t "D " 3
-screen -t "E " 4
-screen -t "F " 5
-screen -t "G " 6
-screen -t "H " 7
-screen -t "I " 8
-screen -t "J " 9
+screen -t "bash " 0
 
 # caption always "%3n %t%? @%u%?%? [%h]%?"
 # hardstatus alwaysignore

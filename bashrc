@@ -120,6 +120,7 @@ export HISTCONTROL=ignoredups
 export HISTSIZE=50000
 export HISTFILESIZE=50000
 export HISTIGNORE="ls:ls -al:pwd:cd:cd ..:du -sh:du -sh .: du-sh *:df -h"
+shopt -s histappend
 export PROMPT_COMMAND='history -a'
 export LESS=-iqsMRXF
 export GNU_WHICH=/usr/local/bin/which
