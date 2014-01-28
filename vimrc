@@ -139,13 +139,13 @@ if has("autocmd")
   augroup Text
     autocmd FileType *      setlocal formatoptions=tcq comments&
     autocmd FileType crontab setlocal tw=0
-    autocmd FileType c,cpp  setlocal tw=79 formatoptions=croq cindent comments=sr:/*,mb:*,el:*/,://
+    autocmd FileType c,cpp  setlocal tw=0 formatoptions=croq cindent comments=sr:/*,mb:*,el:*/,://
     au FileType c setlocal cino=:0,g0,t0,(0,w1,W4
     au FileType c setlocal expandtab
-    autocmd FileType vim  setlocal tw=80 comments=:\"
+    autocmd FileType vim  setlocal tw=0 comments=:\"
     autocmd FileType make setlocal formatoptions=tcq tw=0 ts=4 noet comments=:#
 
-    autocmd FileType perl setlocal formatoptions=croq comments=:# tw=80
+    autocmd FileType perl setlocal formatoptions=croq comments=:# tw=0
     autocmd FileType perl setlocal errorformat=%f:%l:%m 
     autocmd FileType perl setlocal autowrite 
     autocmd FileType perl map ,c :"%"!perltidy -q -pt=2 -sak="if elsif" <CR>
