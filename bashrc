@@ -40,7 +40,7 @@ tale() {
 }
 
 h() {
-    history | grep $* | perl -nale 'BEGIN{%x=();} $_ =~ /^\s*(\d*)  (.*)$/; $x{$2}=$1; END{ @keys = sort { $x{$a} <=> $x{$b} } keys(%x); foreach $k (@keys) {print "$k"} }' | tale
+    history | grep -i $* | perl -nale 'BEGIN{%x=();} $_ =~ /^\s*(\d*)  (.*)$/; $x{$2}=$1; END{ @keys = sort { $x{$a} <=> $x{$b} } keys(%x); foreach $k (@keys) {print "$k"} }' | tale
 }
 
 infocat() {
