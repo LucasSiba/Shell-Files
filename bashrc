@@ -97,12 +97,6 @@ how() {
     shopt -u extdebug
 }
 
-path() {
-    typeset var=${1:-PATH}
-    eval "env |egrep -i ^$var[a-z_0-9]*=[^\(]" | sed '/=(/!{s|=|:|; s|:|\
-    |g; s|'$HOME'|~|g; }'
-}
-
 #######################
 #
 #  aliases
@@ -117,7 +111,6 @@ else
     alias ls='ls -F --color=auto'
 fi
 ls-() { ls -$*; }
-alias diff="diff -b -U 10 --show-c-function"
 alias grep="grep --color --binary-files=without-match -E"
 alias egrep="egrep --color --binary-files=without-match"
 
