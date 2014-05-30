@@ -51,6 +51,12 @@ linecount() {
     perl -e 'our $c = 0; $SIG{ALRM} = sub { print stderr sprintf("\r%d", $c); alarm 1; }; alarm 1; while (<>) { $c++; } print stderr "\r$c\n";'
 }
 
+go_utf8() {
+    export LC_ALL=en_US.UTF-8
+    export LANG=en_US.UTF-8
+    export LANGUAGE=en_US.UTF-8
+}
+
 dbg () {   
     local pgm=$1;
     shift;
