@@ -132,7 +132,7 @@ export HISTSIZE=50000
 export HISTFILESIZE=50000
 shopt -s histappend
 export PROMPT_COMMAND='history -a'
-export LESS=-iqsMRXF
+export LESS=-iqsMRX
 export GNU_WHICH=/usr/local/bin/which
 export PAGER="less -isM"
 export LC_ALL=C
