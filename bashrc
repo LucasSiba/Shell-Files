@@ -120,6 +120,9 @@ ls-() { ls -$*; }
 alias grep="grep --color --binary-files=without-match -E"
 alias egrep="egrep --color --binary-files=without-match"
 
+alias ssho='ssh -o StrictHostKeyChecking=no'
+alias scpo='scp -o StrictHostKeyChecking=no'
+
 #######################
 #
 #  environment settings
